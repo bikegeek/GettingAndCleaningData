@@ -1,26 +1,68 @@
-Creation data: April 19,2015 by bikegeek
+﻿Code book for tidying the Samsung wearables data set
 
-Code book for tidying the Samsung wearables data set
 
-Background information on wearible tracking:
+Study Design
+
+The data used is accessible at:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+Background information on wearables tracking:
 http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/
 
 Full description from the website where the data can be accessed:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-Data accessible at:
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
+Download the data from the above URL and store it in your working directory.
+Unzip the file- you should get a UCI HAR Dataset directory which contains txt files: README.txt, activity_labels.txt, features.txt, features_info.txt and the directories test/ and train/, which contain the data on all subjects divided into a test and train data.
+
+Copy the run_analysis.R script to the UCI HAR Dataset directory, so it can access the test/ and train/ directories, and the necessary txt files for generating column names.
+
+Load the run_analysis.R script.  Run the script without any input parameters: run_analysis()
+
+Instruction List
+For running in RStudio, set your working directory to the UCI HAR Dataset* directory.  E.g. setwd(“/home/someusername/workingdir/UCI HAR Dataset”)
+
+*Your operating system will dictate how the directory name will appear (after uncompressing the downloaded data).  For example, on Mac OS system, the unzipped file will produce a directory UCI HAR Dataset (spaces are preserved).
+
+Make sure you have the rshape2 package installed, as the run_analysis.R script requires this for tidying the data.  Run install.packages(“rshape2”)
+Code Book
 Tidy data description:
 
 A tidy.txt file is created by the run_analysis.R script applied to the above Samsung data.
-The columns are: subject, activity, measurement, measurment average value.
 
-The subject is the number assigned to the subject participating in the study.  There were
-30 people involved in the study, and the subject numbers range from 1-30.
+The columns are: subject, activity, variable, value.
 
-The activity is a description of the activity that the subject was engaged, and can be any one of the following: walking, walking upstairs, walking downstairs, sitting, standing, or laying.
+The subject is the number assigned to the subject (person) participating in the study.  There were 30 people involved in the study, and the subject numbers/identifiers range from 1-30.
 
-The measurement 
+The activity is a description of the activity in which the subject was engaged. An activity is one of the following: walking, walking upstairs, walking downstairs, sitting, standing, or laying.
+
+The variable corresponds to a measurement.  Measurments fall into one of the 17 categories:
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag-XYZ
+tGravityAccMag-XYZ
+tBodyAccJerk-XYZ
+tBodyGyroMag-XYZ
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccJerkMag-XYZ
+
+'f'- denotes frequency domain data
+'t' – denotes time domain data
+'XYZ' -denotes the x-, y-, and z- axis
+
+Only the mean and standard deviation values were used to create the dataset.  The variables with names like tBodyJerk-mean()-X, tBodyJerk-mean()-Y, tBodyJerk-mean()-Z, tBodyJerk-std()-X, tBodyJerk-std()-Y, tBodyJerk-std()-Z, etc. were considered.
+
+The names of the measurements are modifications of the label names used by the study, as defined in the test/y_test.txt and train/y_train.txt files.  The names were converted to lower case, with abbreviations expanded and names pre-pended with 'average', to reflect that the measurements were averaged.  Final measurement names look like the following:
+ average-tbodyacceleration-mean-x
+ average-tbodyacceleration-average-x
+ 
+The values are derived/computed averages of the mean and standard deviation measurements described above.  Units are the sensor signals and unaltered from the Samsung data.
+
 
 

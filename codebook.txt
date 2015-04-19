@@ -1,0 +1,26 @@
+Creation data: April 19,2015 by bikegeek
+
+Code book for tidying the Samsung wearables data set
+
+Background information on wearible tracking:
+http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/
+
+Full description from the website where the data can be accessed:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+Data accessible at:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+Tidy data description:
+
+A tidy.txt file is created by the run_analysis.R script applied to the above Samsung data.
+The columns are: subject, activity, measurement, measurment average value.
+
+The subject is the number assigned to the subject participating in the study.  There were
+30 people involved in the study, and the subject numbers range from 1-30.
+
+The activity is a description of the activity that the subject was engaged, and can be any one of the following: walking, walking upstairs, walking downstairs, sitting, standing, or laying.
+
+The measurement 
+
+

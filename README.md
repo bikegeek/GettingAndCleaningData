@@ -1,3 +1,5 @@
+How to clean up the Samsung wearables data.
+
 Obtain the data:
 ---------------
 Download the zipped data for this analysis from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
@@ -27,3 +29,12 @@ the subject participated.
 
 This file will be created in the UCI HAR Dataset directory (inside your working
 directory).
+
+Overview of script
+------------------
+The run_analysis script combines the test and train data collected on 30 test subjects who 
+wore Samsung smart phones which tracked their activity.  The activities are broken down into
+any of the following six activities: walking, walking upstairs, walking downstairs, sitting,standing, and laying.  Only the measurements for mean and standard deviation were collected and 
+averaged for each activity, for each subject.  The measurements are either frequency or time-averaged and measure gryroscopic, acceleration, and jerk forces. 
+
+The resulting file contains the subject, activity, measurement name, and average value for that measurement.

@@ -14,6 +14,9 @@ Running the script:
 Set your working directory to the UCI HAR Dataset directory.
 Depending on your operating system: /home/someuser/analysis/UCI Har Dataset
 
+Be sure to have reshape2 package installed, as this library is used by the
+script.
+
 In RStudio, source the run_analysis.R script.
 
 Invoke the script: run_analysis()

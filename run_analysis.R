@@ -1,4 +1,4 @@
-skunk <- function(){
+run_analysis <- function(){
 
 #----------------------DESCRIPTION------------------------------------------
 #

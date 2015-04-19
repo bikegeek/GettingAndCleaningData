@@ -102,6 +102,5 @@ tidy$activity <- gsub("6", "laying", tidy$activity)
 
 #Create a text file of the tidy data created above
 workingdir <- getwd()
-print(workingdir)
 write.table(tidy,"tidy.txt",row.name=FALSE)
 }
